@@ -1,7 +1,7 @@
 # ysoserial.net
 ysoserial.net for Windows execute file
 
-# Usage
+## Usage
 
 ysoserial.exe -h  
 ysoserial.net generates deserialization payloads for a variety of .NET formatters.  
@@ -51,7 +51,6 @@ Available gadgets:
         WindowsIdentity (WindowsIdentity gadget)  
                 Formatters:  
                         BinaryFormatter, DataContractSerializer, Json.Net, NetDataContractSerializer, SoapFormatter  
-
 
 Available plugins:  
         ActivatorUrl (Sends a generated payload to an activated, presumably remote, object)  
